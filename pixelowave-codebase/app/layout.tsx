@@ -6,6 +6,8 @@ import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Toaster } from '@/components/ui/toaster';
 import { SessionWrapper } from '@/components/SessionWrapper'; // ✅ Import the client provider
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+      <SpeedInsights />
+
         <SessionWrapper>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navigation />
