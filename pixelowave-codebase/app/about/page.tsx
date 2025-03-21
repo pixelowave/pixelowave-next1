@@ -138,7 +138,8 @@ export default function AboutPage() {
         <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900 mx-auto">
           <Briefcase className="w-8 h-8 text-blue-600 dark:text-blue-300" />
         </div>
-        <h3 className="mt-4 text-xl font-semibold">Zeeshan Ahmad</h3>
+
+        <h3 className="mt-4 text-xl font-semibold">Mark</h3>
         <p className="text-sm text-muted-foreground">Founder & CEO</p>
         <p className="mt-4 text-muted-foreground">
           With over 15 years of experience in software development and digital strategy, David leads our team with vision and expertise.
@@ -148,7 +149,7 @@ export default function AboutPage() {
         <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg bg-green-100 dark:bg-green-900 mx-auto">
           <Code className="w-8 h-8 text-green-600 dark:text-green-300" />
         </div>
-        <h3 className="mt-4 text-xl font-semibold">Shaharyar Ahmad</h3>
+        <h3 className="mt-4 text-xl font-semibold">Hanery</h3>
         <p className="text-sm text-muted-foreground">CTO</p>
         <p className="mt-4 text-muted-foreground">
           Sarah brings deep technical knowledge and innovative thinking to our development processes and technology stack.

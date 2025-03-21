@@ -78,7 +78,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold">Our Office</h3>
                     <p className="mt-1 text-muted-foreground">
-                      Tower E-651 Badarpur<br />
+                      Tower B Cannught place<br />
                       New Delhi
                     </p>
                   </div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold">Phone</h3>
                     <p className="mt-1 text-muted-foreground">
-                      +919560121785
+                      +91837782829
                     </p>
                   </div>
                 </div>
