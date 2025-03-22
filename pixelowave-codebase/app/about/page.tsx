@@ -26,7 +26,7 @@ export default function AboutPage() {
     ],
     "founder": {
       "@type": "Person",
-      "name": "Shaharyar",
+      "name": "ahmad",
       "jobTitle": "Founder & CEO"
     }
   };
@@ -162,7 +162,7 @@ export default function AboutPage() {
             <div className="flex flex-col items-center text-center">
               <Image
                 src=""
-                alt="Shaharyar - CEO"
+                alt="ahmad - CEO"
                 width={200}
                 height={200}
                 className="rounded-full shadow-lg"
