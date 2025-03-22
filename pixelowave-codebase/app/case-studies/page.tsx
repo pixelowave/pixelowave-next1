@@ -1,10 +1,36 @@
+import Head from 'next/head';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+
 
 export default function CaseStudiesPage() {
   return (
     <>
+    <Head>
+        <title>Case Studies | Our Success Stories</title>
+        <meta name="description" content="Explore how we've helped businesses achieve their digital goals with innovative solutions and strategic approaches." />
+        <meta name="keywords" content="case studies, business success, digital transformation, marketing strategy, software solutions" />
+        <meta property="og:title" content="Case Studies | Our Success Stories" />
+        <meta property="og:description" content="Explore how we've helped businesses achieve their digital goals with innovative solutions and strategic approaches." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://pixelowave.com/case-studies" />
+        <meta property="og:image" content="https://pixelowave.com/images/case-studies-cover.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Case Studies | Our Success Stories" />
+        <meta name="twitter:description" content="Explore how we've helped businesses achieve their digital goals with innovative solutions and strategic approaches." />
+        <meta name="twitter:image" content="https://pixelowave.com/images/case-studies-cover.jpg" />
+        <link rel="canonical" href="https://pixelowave.com/case-studies" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Case Studies",
+            "description": "Explore how we've helped businesses achieve their digital goals.",
+            "url": "https://pixelowave.com/case-studies"
+          })}
+        </script>
+      </Head>
       <section className="relative overflow-hidden">
         <div className="container py-20 md:py-24 lg:py-28">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>

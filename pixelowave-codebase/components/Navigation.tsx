@@ -64,18 +64,47 @@ export function Navigation() {
   
   const generateBreadcrumbs = () => {
     const pathSegments = pathname.split('/').filter(Boolean);
-    return pathSegments.map((segment, index) => {
-      const href = '/' + pathSegments.slice(0, index + 1).join('/');
-      return (
-        <React.Fragment key={href}>
-          <li className="mx-2">/</li>
+  
+    return (
+      <nav aria-label="breadcrumb" className="w-full mt-3 px-0">
+        <ol className="flex items-center text-sm text-black">
+          {/* Home Link */}
           <li>
-            <Link href={href} className="text-primary capitalize">{decodeURIComponent(segment.replace(/-/g, ' '))}</Link>
+            <Link href="/" className="flex items-center space-x-1 text-black hover:text-blue-600">
+              <Home className="h-4 w-4" />
+              <span>Home</span>
+            </Link>
           </li>
-        </React.Fragment>
-      );
-    });
+  
+          {/* Breadcrumb Loop */}
+          {pathSegments.map((segment, index) => {
+            const href = '/' + pathSegments.slice(0, index + 1).join('/');
+            const isLast = index === pathSegments.length - 1;
+  
+            let label = segment.replace(/-/g, ' ').replace(/\b\w/g, (char) => char.toUpperCase());
+  
+            // Special Handling for Blog Pages
+            if (segment === 'blog' && index === pathSegments.length - 1) {
+              label = 'Blog'; // Show "Blog" for /blog page
+            } else if (pathSegments.includes('blog') && index === pathSegments.length - 1) {
+              label = 'Blog Details'; // Default for individual post pages
+            }
+  
+            return (
+              <React.Fragment key={href}>
+                <li className="mx-1">/</li>
+                <li className={isLast ? "text-blue-600 font-semibold" : "text-black hover:text-gray-600"}>
+                  <Link href={href}>{label}</Link>
+                </li>
+              </React.Fragment>
+            );
+          })}
+        </ol>
+      </nav>
+    );
   };
+  
+    
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
@@ -94,16 +123,16 @@ export function Navigation() {
         <div className="flex items-center">
           <Logo size={40} />
           <div className="flex flex-col items-center leading-none">
-  {/* Logo */}
-  <span className="ml-2 text-2xl text-left font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-    Pixelowave
-  </span>
+          {/* Logo */}
+          <span className="ml-2 text-2xl text-left font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Pixelowave
+          </span>
 
-  {/* Slogan */}
-  <span className="text-[9px] font-medium text-left text-orange-500">
-    Elevating Digital Experiences
-  </span>
-</div>
+          {/* Slogan */}
+          <span className="text-[9px] font-medium text-left text-orange-500">
+            Elevating Digital Experiences
+          </span>
+        </div>
 
 
 
@@ -228,12 +257,6 @@ export function Navigation() {
       {pathname !== '/' && (
         <nav aria-label="breadcrumb" className="container mt-3">
           <ol className="flex items-center text-sm text-muted-foreground">
-            <li>
-              <Link href="/" className="flex items-center space-x-1">
-                <Home className="h-4 w-4" />
-                <span>Home</span>
-              </Link>
-            </li>
             {generateBreadcrumbs()}
           </ol>
           

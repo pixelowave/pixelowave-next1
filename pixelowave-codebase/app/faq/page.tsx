@@ -57,7 +57,7 @@ export default function FAQ() {
             <div className="relative rounded-2xl bg-white dark:bg-gray-950 p-8 shadow-xl">
               <button onClick={() => setActiveIndex(activeIndex === index ? null : index)} className="flex justify-between w-full text-lg font-medium">
                 {faq.question}
-                <span>{activeIndex === index ? "−" : "+"}</span>
+                <span className="text-orange-500 text-3xl">{activeIndex === index ? "−" : "+"}</span>
               </button>
               <AnimatePresence>
                 {activeIndex === index && (
